@@ -8,10 +8,11 @@
  */
 export class WeatherResponse {
   cod?: string; // internal parameter
-  message?: string;
-  cnt: number;
+  message?: string; // internal parameter
+  cnt?: number;
   list: WeatherList[];
-  city: ICityInfo;
+  date: string;
+  city?: ICityInfo;
 
   /**
    * Currently not required as data is coming in the required format only
@@ -26,7 +27,7 @@ export class WeatherResponse {
   }
 }
 
-interface WeatherList {
+export interface WeatherList {
   dt: number;
   main: IMainInfo;
   weather: WeatherDetails[];
@@ -63,7 +64,7 @@ interface WeatherDetails {
   icon: string;
 }
 
-interface ICityInfo {
+export interface ICityInfo {
   id: number;
   name: string;
   coord: ICoordinates;

@@ -7,9 +7,10 @@ import { SharedModule } from '@shared';
 import { MaterialModule } from '@app/material.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   imports: [CommonModule, TranslateModule, SharedModule, FlexLayoutModule, MaterialModule, HomeRoutingModule],
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, WeatherComponent],
 })
 export class HomeModule {}

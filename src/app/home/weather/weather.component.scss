@@ -1,0 +1,39 @@
+@import "../../../theme/theme-variables.scss";
+
+// Not added boostrap package else would be using direct classes.
+
+.weather-container {
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: calc(100vh - 200px);
+
+  .city-information {
+    margin: 0 1rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .main-card {
+    .date-title {
+      background-color: $primary;
+      color: $white-color;
+      padding: 0.5rem;
+    }
+    .main-card-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-right: 0.5rem;
+      .display-card {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        .sub-info {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

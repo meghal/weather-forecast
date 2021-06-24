@@ -1,12 +1,9 @@
 <div class="container">
   <mat-card>
-    <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
     <mat-card-title translate>HOME_TITLE</mat-card-title>
     <mat-card-subtitle translate> CITY.LONDON </mat-card-subtitle>
     <mat-card-content>
-      <mat-card class="item-card" *ngFor="let item of weatherInfo.list">
-        {{ item.dt }}
-      </mat-card>
+      <app-weather></app-weather>
     </mat-card-content>
   </mat-card>
 </div>

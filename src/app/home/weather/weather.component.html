@@ -1,0 +1,52 @@
+<app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+
+<div class="weather-container">
+  <div *ngIf="cityInfo" class="city-information">
+    <div>
+      <label>Name: </label><span>{{ cityInfo.name }}</span>
+    </div>
+    <div>
+      <label>Country code: </label><span>{{ cityInfo.country }}</span>
+    </div>
+    <div>
+      <label>Sunrise: </label><span>{{ cityInfo.sunrise | date: 'hh:mm a' }}</span>
+    </div>
+    <div>
+      <label>Sunset: </label><span>{{ cityInfo.sunset | date: 'hh:mm a' }}</span>
+    </div>
+  </div>
+  <mat-card class="w-100 main-card" *ngFor="let item of weatherInfo">
+    <mat-card-header>
+      <mat-card-title class="date-title">{{ item.date | date: 'MMM, dd YYYY' }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="main-card-content">
+      <mat-card class="display-card" *ngFor="let listItem of item.list; let idx = index">
+        <mat-card-header>
+          <mat-card-title>{{ listItem.dt_txt | date: 'hh:mm a' }}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div *ngFor="let weather of listItem.weather; let i = index">
+            <!-- To display only 1 type of weather condition -->
+            <img
+              [title]="weather.main + ' - ' + weather.description"
+              *ngIf="i < 1"
+              [src]="config.defaultImageURL + weather.icon + config.imageSuffix"
+              [alt]="weather.description"
+            />
+          </div>
+          <div class="sub-info">
+            <div>Current Temperature: {{ listItem.main.temp }} &deg;F</div>
+            <div>Min Temperature: {{ listItem.main.temp_min }} &deg;F</div>
+            <div>Max Temperature: {{ listItem.main.temp_max }} &deg;F</div>
+            <div>Humidity: {{ listItem.main.humidity }}%</div>
+            <div>Wind Speed: {{ listItem.wind.speed }} miles/hour</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+    <hr />
+  </mat-card>
+</div>

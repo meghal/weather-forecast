@@ -1,6 +1,10 @@
+# Created By:
+
+Meghal
+
 # GOAL: Project Name: weather-forecast
 
-To show 5-day weather forecast for particular location
+To show 5-day weather forecast of particular location
 
 # Angular Version
 

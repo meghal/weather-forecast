@@ -9,7 +9,11 @@ import { env } from './env';
 export const environment = {
   production: true,
   version: env.npm_package_version,
-  serverUrl: 'https://api.chucknorris.io',
+  serverUrl: 'https://api.openweathermap.org/data/2.5/forecast?appid=f434f87d7b956d7e3ade58c56d43ebc8&units=Imperial&',
+  // Below is my test api key - It will not work after 30 June 2021
+  apiKey: 'f434f87d7b956d7e3ade58c56d43ebc8&cnt=5',
+  imageURL: 'https://openweathermap.org/img/wn/',
+  imageSuffix: '@2x.png',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US'],
 };

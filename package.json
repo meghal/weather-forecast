@@ -36,12 +36,13 @@
     "@angular/router": "^11.0.8",
     "@angular/service-worker": "^11.0.8",
     "@ngx-translate/core": "^13.0.0",
+    "firebase": "^7.0 || ^8.0",
     "lodash": "^4.17.20",
     "material-design-icons-iconfont": "^6.1.0",
+    "moment": "^2.29.1",
     "rxjs": "^6.6.3",
     "tslib": "^2.0.1",
-    "zone.js": "~0.10.3",
-    "firebase": "^7.0 || ^8.0"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular/cli": "~11.0.6",
